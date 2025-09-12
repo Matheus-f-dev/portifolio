@@ -1,0 +1,123 @@
+/* Advanced Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f1419 0%, #1a252f 50%, #2c3e50 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: all 0.8s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.logo-container {
+    margin-bottom: 3rem;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.logo-text {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #e74c3c;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 0.5rem;
+}
+
+.logo-subtitle {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.loading-animation {
+    margin-top: 2rem;
+}
+
+.code-blocks {
+    margin-bottom: 2rem;
+}
+
+.code-block {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: #2ecc71;
+    margin: 0.5rem 0;
+    opacity: 0;
+    animation: typeIn 0.8s ease forwards;
+}
+
+.code-block:nth-child(1) { animation-delay: 0.5s; }
+.code-block:nth-child(2) { animation-delay: 1s; }
+.code-block:nth-child(3) { animation-delay: 1.5s; }
+
+.progress-container {
+    margin-top: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(231, 76, 60, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+.progress-text {
+    font-family: 'JetBrains Mono', monospace;
+    color: #e74c3c;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+@keyframes logoGlow {
+    0% { text-shadow: 0 0 20px rgba(231, 76, 60, 0.5); }
+    100% { text-shadow: 0 0 30px rgba(231, 76, 60, 0.8), 0 0 40px rgba(231, 76, 60, 0.3); }
+}
+
+@keyframes typeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 3rem;
+    }
+    
+    .preloader-content {
+        padding: 1rem;
+    }
+}

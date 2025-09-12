@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus freire - Desenvolvedor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fix.css">
+    <link rel="stylesheet" href="preloader.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Advanced Loading Screen -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="logo-container">
+                <div class="logo-text">&lt;/&gt; MF</div>
+                <div class="logo-subtitle">Matheus Freire</div>
+            </div>
+            <div class="loading-animation">
+                <div class="code-blocks">
+                    <div class="code-block">console.log('Carregando...');</div>
+                    <div class="code-block">import Portfolio from './dev';</div>
+                    <div class="code-block">Portfolio.initialize();</div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>&lt;/&gt; Matheus freire</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#skills" class="nav-link">Habilidades</a>
+                <a href="#projects" class="nav-link">Projetos</a>
+                <a href="#contact" class="nav-link">Contato</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="typing-text">Olá, eu sou <span class="highlight">Matheus</span></span>
+                </h1>
+                <p class="hero-subtitle">Desenvolvedor Full Stack em aprendizado • Sempre buscando desenvolver novas soluções • em busca sempre de novos aprendizados</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Anos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Projetos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1+</span>
+                        <span class="stat-label">Clientes</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                    <a href="#contact" class="btn btn-secondary">Entre em Contato</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <div class="code-animation">
+                            <div class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</div>
+                            <div class="code-line">  <span class="property">name</span>: <span class="string">'Matheus Freire'</span>,</div>
+                            <div class="code-line">  <span class="property">skills</span>: [<span class="string">'React'</span>, <span class="string">'Node.js'</span>,  <span class="string">'Python'</span>,  <span class="string">'SQL'</span>],</div>
+                            <div class="code-line">  <span class="property">passion</span>: <span class="string">'Coding'</span></div>
+                            <div class="code-line">};</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Estudante de desenvolvimento Full Stack apaixonado por tecnologia e inovação. Atualmente focado em aprender React, Node.js, Python e tecnologias modernas, sempre buscando aplicar conhecimentos em projetos práticos e desafiadores.</p>
+                    <p>Dedicado ao aprendizado contínuo, com interesse especial em clean code, boas práticas de desenvolvimento e metodologias ágeis. Sempre em busca de oportunidades para crescer profissionalmente e contribuir com soluções criativas.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <p>Anos Estudando</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <p>Projetos Pessoais</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Dedicação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-items">
+                       
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-content">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git/CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            <div class="projects-carousel">
+                <button class="carousel-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="projects-wrapper">
+                    <div class="projects-grid" id="projectsGrid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3>E-commerce Platform</h3>
+                                <p>Plataforma de e-commerce completa com carrinho de compras, sistema de pagamento e painel administrativo.</p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    <span>Stripe</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/matheusfreire" target="_blank" class="project-link" title="Ver no GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link demo-link" title="Ver Demo" data-project="ecommerce"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3>Task Manager</h3>
+                                <p>Aplicativo de gerenciamento de tarefas com funcionalidades de colaboração em equipe e notificações em tempo real.</p>
+                                <div class="project-tech">
+                                    <span>Vue.js</span>
+                                    <span>Express</span>
+                                    <span>Socket.io</span>
+                                    <span>MySQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/matheusfreire" target="_blank" class="project-link" title="Ver no GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link demo-link" title="Ver Demo" data-project="taskmanager"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3>Dashboard Analytics</h3>
+                                <p>Dashboard interativo para análise de dados com gráficos dinâmicos e relatórios personalizáveis.</p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>D3.js</span>
+                                    <span>Python</span>
+                                    <span>PostgreSQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/matheusfreire" target="_blank" class="project-link" title="Ver no GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link demo-link" title="Ver Demo" data-project="dashboard"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3>Chat Application</h3>
+                                <p>Aplicativo de chat em tempo real com salas privadas, compartilhamento de arquivos e emojis personalizados.</p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Socket.io</span>
+                                    <span>Node.js</span>
+                                    <span>Redis</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/matheusfreire" target="_blank" class="project-link" title="Ver no GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link demo-link" title="Ver Demo" data-project="chat"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-weather-sun"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3>Weather App</h3>
+                                <p>Aplicativo de previsão do tempo com geolocalização, mapas interativos e alertas meteorológicos.</p>
+                                <div class="project-tech">
+                                    <span>JavaScript</span>
+                                    <span>API REST</span>
+                                    <span>CSS3</span>
+                                    <span>HTML5</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/matheusfreire" target="_blank" class="project-link" title="Ver no GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link demo-link" title="Ver Demo" data-project="weather"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3>Game Portfolio</h3>
+                                <p>Coleção de mini-games desenvolvidos em JavaScript, incluindo Snake, Tetris e Breakout com pontuação online.</p>
+                                <div class="project-tech">
+                                    <span>JavaScript</span>
+                                    <span>Canvas</span>
+                                    <span>CSS3</span>
+                                    <span>LocalStorage</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/matheusfreire" target="_blank" class="project-link" title="Ver no GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link demo-link" title="Ver Demo" data-project="games"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Pronto para o próximo desafio!</h3>
+                    <p>Especialista em transformar ideias complexas em soluções digitais de alto impacto. Vamos construir algo incrível juntos!</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>matheus.freire@dev.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+55 (31) 98929-5058</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Belo Horizonte, MG</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/matheusfanacleto/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Matheus-f-dev" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Matheus Freire. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
