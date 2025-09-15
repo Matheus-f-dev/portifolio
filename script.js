@@ -31,11 +31,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(15, 20, 25, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(231, 76, 60, 0.3)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(15, 20, 25, 0.95)';
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
     }
 });
 
@@ -87,7 +85,47 @@ window.addEventListener('load', () => {
     initProjectsCarousel();
     initProjectLinks();
     initSocialLinks();
+    initThemeToggle();
 });
+
+// Theme Toggle Functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    
+    // Check for saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    
+    if (savedTheme === 'light') {
+        body.setAttribute('data-theme', 'light');
+        icon.className = 'fas fa-sun';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        
+        // Add rotation animation
+        icon.style.transform = 'rotate(360deg) scale(0.8)';
+        
+        setTimeout(() => {
+            if (currentTheme === 'light') {
+                body.removeAttribute('data-theme');
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'light');
+            }
+            
+            // Reset transform
+            setTimeout(() => {
+                icon.style.transform = '';
+            }, 100);
+        }, 200);
+    });
+}
 
 // Social Links Functionality
 function initSocialLinks() {
@@ -319,12 +357,7 @@ window.addEventListener('scroll', () => {
     const blurAmount = Math.min(scrolled / 100, 1) * 10;
     navbar.style.backdropFilter = `blur(${blurAmount}px)`;
     
-    // Keep navbar dark
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(15, 20, 25, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(15, 20, 25, 0.95)';
-    }
+
 });
 
 // Skills animation on scroll
