@@ -86,7 +86,19 @@ window.addEventListener('load', () => {
     initProjectLinks();
     initSocialLinks();
     initThemeToggle();
+    initEmailJS();
+    initContactForm();
 });
+
+// Initialize EmailJS
+function initEmailJS() {
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init('ILEysMKS2auw5OxCg');
+        console.log('EmailJS inicializado com sucesso');
+    } else {
+        console.error('EmailJS não está disponível');
+    }
+}
 
 // Theme Toggle Functionality
 function initThemeToggle() {
@@ -302,37 +314,54 @@ function animateCodeBlock() {
     });
 }
 
+
+
 // Contact form handling
-const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = contactForm.querySelector('input[type="text"]').value;
-    const email = contactForm.querySelector('input[type="email"]').value;
-    const message = contactForm.querySelector('textarea').value;
-    
-    // Simple validation
-    if (!name || !email || !message) {
-        alert('Por favor, preencha todos os campos!');
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) {
+        console.error('Formulário não encontrado!');
         return;
     }
     
-    // Simulate form submission
-    const submitBtn = contactForm.querySelector('.btn');
-    const originalText = submitBtn.textContent;
-    
-    submitBtn.textContent = 'Enviando...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
-});
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('Formulário submetido');
+        
+        const submitBtn = contactForm.querySelector('.btn');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+        
+        // Verificar se EmailJS está carregado
+        if (typeof emailjs === 'undefined') {
+            console.error('EmailJS não carregado!');
+            showNotification('❌ Erro: EmailJS não carregado');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
+        
+        console.log('Enviando email...');
+        
+        // Send email using EmailJS
+        emailjs.sendForm('service_680461h', 'template_mz7p9e9', contactForm)
+            .then((response) => {
+                console.log('Email enviado com sucesso:', response);
+                showNotification('✅ Mensagem enviada com sucesso!');
+                contactForm.reset();
+            })
+            .catch((error) => {
+                console.error('Erro ao enviar email:', error);
+                showNotification('❌ Erro: ' + (error.text || 'Tente novamente'));
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+    });
+}
 
 // Enhanced Parallax effect
 window.addEventListener('scroll', () => {
@@ -689,11 +718,15 @@ function showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
     notification.textContent = message;
+    
+    const isSuccess = message.includes('✅');
+    const bgColor = isSuccess ? '#27ae60, #2ecc71' : '#e74c3c, #c0392b';
+    
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background: linear-gradient(45deg, #e74c3c, #c0392b);
+        background: linear-gradient(45deg, ${bgColor});
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 10px;

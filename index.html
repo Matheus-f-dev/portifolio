@@ -10,6 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Advanced Loading Screen -->
@@ -275,15 +276,15 @@
                         <a href="https://github.com/Matheus-f-dev" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="text" name="from_name" placeholder="Seu Nome" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Seu Email" required>
+                        <input type="email" name="from_email" placeholder="Seu Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
                 </form>
