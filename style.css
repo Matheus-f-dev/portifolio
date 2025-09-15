@@ -1023,6 +1023,10 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+[data-theme="light"] .stat-label {
+    color: var(--text-secondary);
+}
+
 .code-animation {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
