@@ -693,6 +693,11 @@ function initProjectLinks() {
     };
     
     demoLinks.forEach(link => {
+        // Se o link já tem href definido, não intercepta o clique
+        if (link.href && link.href !== '#' && !link.getAttribute('data-project')) {
+            return; // Deixa o comportamento padrão do link
+        }
+        
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const projectType = link.getAttribute('data-project');
